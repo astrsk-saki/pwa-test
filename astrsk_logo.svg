@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<!-- shadow -->
+<defs>
+    <filter id="f1">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+    </filter>
+</defs>
+<ellipse cx="265" cy="414" rx="70" ry="15" fill="#b4b4b8" filter="url(#f1)" />
+
+<!--rect x="0" y="0" width="512" height="512" fill="#ccc"/>
+<rect x="255" y="255" width="1" height="1" fill="#333"/-->
+        
+<g id="base">
+<!-- 青 -->
+<g id="b" transform="translate(80,200) rotate(0)">
+  <polygon points="38,0 0,50 54,50 92,0" fill="#2680b9"/>
+  <polygon points="38,100 0,50 54,50 92,100" fill="#2866ad"/>
+  <polygon points="92,0 54,50 92,100 130,50" fill="#1f568b"/>
+</g>
+<!-- 緑 -->
+<g id="g" transform="translate(250,70) rotate(72)">
+  <polygon points="38,0 0,50 54,50 92,0" fill="#6cbf54"/>
+  <polygon points="38,100 0,50 54,50 92,100" fill="#579a44"/>
+  <polygon points="92,0 54,50 92,100 130,50" fill="#478041"/>
+</g>
+<!-- オレンジ -->
+<g id="o" transform="translate(427,191) rotate(144)">
+  <polygon points="38,0 0,50 54,50 92,0" fill="#f6a460"/>
+  <polygon points="38,100 0,50 54,50 92,100" fill="#bf762f"/>
+  <polygon points="92,0 54,50 92,100 130,50" fill="#ef8f2e"/>
+</g>
+<!-- 赤 -->
+<g id="r" transform="translate(365,396) rotate(216)">
+  <polygon points="38,0 0,50 54,50 92,0" fill="#e52431"/>
+  <polygon points="38,100 0,50 54,50 92,100" fill="#b0282e"/>
+  <polygon points="92,0 54,50 92,100 130,50" fill="#ec555b"/>
+</g>
+<!-- 紫 -->
+<g id="v" transform="translate(151,402) rotate(288)">
+  <polygon points="38,0 0,50 54,50 92,0" fill="#4f3172"/>
+  <polygon points="38,100 0,50 54,50 92,100" fill="#725ca1"/>
+  <polygon points="92,0 54,50 92,100 130,50" fill="#5a3392"/>
+</g>
+</g>
+<!-- Javascript -->
+<script type="text/javascript">
+var canvas_base = document.getElementById('base');
+var canvas_b = document.getElementById('b');
+var canvas_g = document.getElementById('g');
+var canvas_o = document.getElementById('o');
+var canvas_r = document.getElementById('r');
+var canvas_v = document.getElementById('v');
+
+var degree = 0; //角度
+
+function loop(){
+  var d=0;
+  var db=0;
+  if (degree &lt; 360){
+    d=0;
+    db=0;
+  }else if (degree &lt; 360*2){
+    d=degree;
+    db=0;
+  }else{
+    d=degree;
+    db=degree;
+  }
+  canvas_b.setAttribute("transform", "translate(80,200) rotate("+(d+0)+")");
+  canvas_g.setAttribute("transform", "translate(250,70) rotate("+(d+72)+")");
+  canvas_o.setAttribute("transform", "translate(427,191) rotate("+(d+144)+")");
+  canvas_r.setAttribute("transform", "translate(365,396) rotate("+(d+216)+")");
+  canvas_v.setAttribute("transform", "translate(151,402) rotate("+(d+288)+")");
+  canvas_base.setAttribute("transform", "rotate("+(db)+",255,255)");
+
+  degree+=2;
+  if (degree &lt; 360){
+    degree+=2;
+  }
+  if (degree>=360*3){
+    degree=0;
+  }
+  window.requestAnimationFrame(loop);
+}
+loop();
+</script>
+</svg>
