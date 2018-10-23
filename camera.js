@@ -1,3 +1,4 @@
+/*
 var p = navigator.mediaDevices.getUserMedia({ audio: true, video: true });
 
 p.then(function(stream) {
@@ -9,9 +10,8 @@ p.then(function(stream) {
 };
 
 p.catch(function(e) { console.log(e.name); }); // always check for errors at the end.
+*/
 
-
-/*
 const medias = {audio : false, video : true},
       video  = document.getElementById("video");
 
@@ -24,4 +24,3 @@ function successCallback(stream) {
 function errorCallback(err) {
   alert(err);
 };
-*/
