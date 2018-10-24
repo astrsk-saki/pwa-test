@@ -1,6 +1,9 @@
 <html>
 <head>
   <title>Hello PWA. pwa.html</title>
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
   <style>
     body {
       text-align:center;
@@ -8,7 +11,7 @@
       vertical-align: middle;
     }
     .image {
-      width: 80%; 
+      width: 256px; 
       margin: auto;
       display: block;
     }
@@ -18,7 +21,7 @@
   <h1>pwa.html</h1>
   <img src="./pwa-logo.svg" class="image" />
   <hr>
-  <form method="get" action="./index.html"><button type="submit">index.html</button></form>
-  <form method="get" action="./camera.html"><button type="submit">camera.html</button></form>
+  <a href="./index.html" class="btn text-primary">index</a><br>
+  <a href="./camera.html" class="btn text-primary">camera</a><br>
 </body>
 </html>
